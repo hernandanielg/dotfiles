@@ -49,11 +49,11 @@ ZSH_THEME="jbergantine"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node ruby rvm rake rails tmux aws)
+plugins=(git docker docker-compose tmux aws)
 
 # User configuration
 
-export PATH="/usr/local/node/bin:/usr/local/java/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+#export PATH="/usr/local/node/bin:/usr/local/java/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,8 +83,12 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/.profile
-eval $(keychain --eval --quiet /home/hernandanielg/.ssh/id_rsa)
-export GOPATH=/home/hernandanielg/gocode/
-export PATH=$PATH:$GOPATH/bin
+#source ~/.profile
+#eval $(keychain --eval --quiet /home/hernandanielg/.ssh/id_rsa)
+
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+
+PATH=$PATH:/opt/Crossover/:/opt/Franz/
+export PATH
